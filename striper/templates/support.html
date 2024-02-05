@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div id="support">
+<div id="new">
+<b>New Customers</b><br>
+<form id="one" action="/product" method="post">
+<input type="checkbox" name="tos" value="agree" required="required" />I agree to the <a target="_blank" href="tos.html">Terms of Service</a><br>
+<select name="product" id="product" required="required">
+	<option value="">Choose Service</option>
+	<option disabled>Single Sessions</option>
+	<option value="1">1 Session - $50</option>
+	<option value="2">2 Sessions - $100</option>
+	<option value="3">3 Sessions - $150</option>
+	<option disabled>Subscription Services</option>
+	<option value="4">Weekly Checkup</option>
+	<option value="5">Monthly Checkup</option>
+	<option value="6">On-Call Support</option>
+</select>
+<br>
+<input type="submit" value="Continue">
+</form>
+</div>
+<div id="spacer">
+<div id="return">
+<br>
+<b>Returning Customers</b><br>
+<form id="return" action="/connect" method="post">
+	Email Address:<br>
+	<input type="email" name="email" pattern="" required>
+	<input type="submit" value="Continue">
+</form>
+</div>
+</div>
+
+{% endblock %}

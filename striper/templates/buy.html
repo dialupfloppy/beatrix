@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/charge" method="post">
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	data-key="{{ key }}"
+	data-description="{{ description }}"
+	data-name="Beatrix.IO LLC"
+	data-amount="{{ amount }}"
+	data-locale="auto">
+</script>
+<input type="hidden" name="product_id" value="{{ id }}"/>
+</form>
+{% endblock %}
